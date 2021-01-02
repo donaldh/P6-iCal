@@ -13,7 +13,7 @@ grammar Data::ICal::Grammar {
     }
 
     token name {
-        \w+
+        <[-\w]>+
     }
 
     token meta {
