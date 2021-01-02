@@ -6,6 +6,14 @@ has $.std-rrule;
 has $.dst-offset;
 has $.dst-rrule;
 
+method Str {
+    my $ret;
+
+    $ret ~= "BEGIN:VTIMEZONE\n";
+    $ret ~= 'TZID:' ~ $!tzid ~ "\n";
+    $ret ~= "END:VTIMEZONE\n";
+}
+
 method offset-for-datetime($dt) {
     # lets start at the beginning of the year (standard time)
     my $offset = $.std-offset;
